@@ -1,3 +1,4 @@
+// відкриття та закриття модального вікна
 (() => {
   const refs = {
     openModalBtn: document.querySelector("[data-modal-open]"),
@@ -12,4 +13,3 @@
     refs.modal.classList.toggle("is-hidden");
   }
 })();
-

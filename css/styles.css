@@ -5,6 +5,7 @@
   --font-weight-less: 500;
   --font-size-more: 16px;
   --font-size-less: 14px;
+  
   /* колор */
   --color-primary: #757575;
   --color-secondary: #212121;
@@ -22,13 +23,17 @@
   --color-header-border: #ececec;
   --color-border-box: #eeeeee;
   --color-icon: #afb1b8;
-  --color-contact-tooter: rgba(255, 255, 255, 0.6);
+  --color-contact-footer: rgba(255, 255, 255, 0.6);
   /* анімація */
   --color-background-box: rgba(33, 150, 243, 0.9);
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   /*  */
   --fill-icon-dark: #212121;
+
+  /* форми */
+  --border-form: 1px solid rgba(33, 33, 33, 0.2);
 }
+
 /* спадкодавець */
 body {
   background-color: var(--color-background);
@@ -441,7 +446,7 @@ body {
 }
 
 .footer-conteiner {
- display: flex;
+  display: flex;
   align-items: baseline;
   gap: 93px;
 }
@@ -480,7 +485,7 @@ body {
 }
 
 .contact-address {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-contact-footer);
   font-style: normal;
   font-weight: inherit;
   font-size: var(--font-size-less);
@@ -497,7 +502,7 @@ body {
 
 .welcome-text {
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: var(--font-size-less);
   line-height: 1.143;
   letter-spacing: 0.03em;
   color: var(--color-white);
@@ -512,7 +517,6 @@ body {
 .welcome-link .icon {
   fill: var(--color-white);
 }
-
 
 .form-footer {
   position: relative;
@@ -539,11 +543,11 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
-  font-size: 16px;
+  font-size: var(--font-size-more);
   line-height: 1.25;
   letter-spacing: 0.03em;
 
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-contact-footer);
 }
 
 /* porfolio */
@@ -731,12 +735,6 @@ body {
 /* оформляння форм */
 /* форми у модальному вікні */
 
-/* Порядок оформлення стилів:
-1. Позиціювання єлементів
-2. Блочна модель (геометрія)
-3. Кольор та текст
-4. Ефекти (аніації, переходи) */
-
 textarea {
   resize: none;
 }
@@ -777,7 +775,7 @@ textarea {
 .form-field > .form-input {
   height: 40px;
   padding: 12px 42px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
+  border: var(--border-form);
   border-radius: 4px;
 
   transition: border 250ms var(--timing-function);
@@ -785,7 +783,7 @@ textarea {
 
 .form-field .form-textarea {
   padding: 12px 16px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
+  border: var(--border-form);
   border-radius: 4px;
 
   transition: border 250ms var(--timing-function);
@@ -840,17 +838,16 @@ textarea {
   font-size: 14px;
   line-height: 1.714;
   letter-spacing: 0.03em;
-  user-select: none;
 }
 
 /* .check .icon { */
-  .form-label .icon {
+.form-label .icon {
   position: absolute;
   top: 50%;
   left: 0;
   width: 16px;
   height: 15px;
- 
+
   border: 2px solid var(--color-secondary);
   border-radius: 2px;
   background-color: var(--color-background);
@@ -858,23 +855,16 @@ textarea {
   transform: translateY(-50%);
   fill: transparent;
   transition: border-color 250ms var(--timing-function),
-  background-color 250ms var(--timing-function);
+    background-color 250ms var(--timing-function);
   cursor: pointer;
 }
 
-
-  .checkbox:checked + .icon {
+.checkbox:checked + .icon {
   background-color: var(--color-accent);
   border: transparent;
   fill: var(--color-background);
 }
 
-.checkbox:hover + .icon,
-.checkbox:focus + .icon {
-  background-color: var(--color-accent);
-  border: transparent;
-  fill: var(--color-background);
-}
 
 /* прихований чекет */
 .check .checkbox {
